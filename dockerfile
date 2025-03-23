@@ -11,14 +11,11 @@ RUN docker-php-ext-install mysqli pdo pdo_mysql
 # Set direktori kerja
 WORKDIR /var/www/html
 
-# Salin file composer.json & composer.lock terlebih dahulu untuk caching
-COPY composer.json composer.lock /var/www/html/
-
-# Jalankan Composer install terlebih dahulu sebelum menyalin semua file
-RUN composer install --no-dev --optimize-autoloader --ignore-platform-reqs
-
-# Sekarang salin semua file ke dalam container
+# Salin semua file ke dalam container (pastikan artisan tersedia)
 COPY . /var/www/html
+
+# Jalankan Composer install setelah semua file disalin
+RUN composer install --no-dev --optimize-autoloader --ignore-platform-reqs
 
 # Pastikan izin ke storage dan bootstrap (jika Laravel)
 RUN chmod -R 777 /var/www/html/storage /var/www/html/bootstrap/cache
