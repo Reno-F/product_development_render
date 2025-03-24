@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # laravel-render-template
 
 Do you want to host your Laravel application for FREE and stress free? This guide will take you step by step until your application is hosted on render.com. 
@@ -218,8 +217,3 @@ Chat me up on Twitter via [Ayobami Ogundiran](https://twitter.com/codingnninja)
 
 
 
-=======
-nasi putih = 150
-sayur = 150
-ayam cincang = 150
->>>>>>> 34a5d24 (AFL-3)
